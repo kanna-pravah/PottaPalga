@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Table 1",
+    "capacity": 4,
+    "status": "vacant"
+  },
+  {
+    "id": 2,
+    "name": "Table 2",
+    "capacity": 2,
+    "status": "reserved"
+  },
+  {
+    "id": 3,
+    "name": "Table 3",
+    "capacity": 6,
+    "status": "VIP"
+  },
+  {
+    "id": 4,
+    "name": "Table 4",
+    "capacity": 8,
+    "status": "merged"
+  },
+  {
+    "id": 5,
+    "name": "Table 5",
+    "capacity": 4,
+    "status": "vacant"
+  }
+]

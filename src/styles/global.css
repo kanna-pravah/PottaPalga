@@ -1,0 +1,225 @@
+/* Global Styles and Branding for Potta Palga */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap');
+
+/* Color Palette */
+:root {
+  --color-primary: #b7410e; /* Rustic orange */
+  --color-secondary: #f4a261; /* Warm accent */
+  --color-accent: #2a9d8f; /* Teal accent */
+  --color-text: #333333; /* Dark text */
+  --color-background: #fff8f0; /* Light warm background */
+  --base-font-size: 16px;
+}
+
+/* Staff Theme Color Palette */
+.staff-theme {
+  --color-primary: #004080; /* Deep blue */
+  --color-secondary: #0073e6; /* Bright blue accent */
+  --color-accent: #66b2ff; /* Light blue accent */
+  --color-text: #e6f0ff; /* Light text */
+  --color-background: #001f3f; /* Dark blue background */
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Apply staff theme background and text color globally */
+.staff-theme body, 
+.staff-theme .container, 
+.staff-theme .card, 
+.staff-theme .navbar, 
+.staff-theme .nav-tabs .nav-link.active, 
+.staff-theme .nav-tabs .nav-link {
+  background-color: var(--color-background) !important;
+  color: var(--color-text) !important;
+}
+
+/* Staff theme navbar */
+.staff-theme .navbar {
+  background-color: var(--color-primary) !important;
+}
+
+/* Staff theme nav-tabs */
+.staff-theme .nav-tabs .nav-link {
+  color: var(--color-accent) !important;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.staff-theme .nav-tabs .nav-link.active {
+  color: var(--color-text) !important;
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+
+/* Staff theme table cards on Tables page */
+.staff-theme .container .card {
+  background-color: #003366 !important; /* Darker blue for table cards */
+  border: 2px solid #0059b3 !important; /* Bright blue border */
+  color: #e6f0ff !important;
+}
+
+/* Font Families */
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.2;
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+p, a, button, input, select, textarea {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Links and Buttons */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+a:hover, a:focus {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  font-family: 'Open Sans', sans-serif;
+  transition: all 0.3s ease;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  border-radius: 0.375rem;
+}
+
+button:hover, button:focus {
+  box-shadow: 0 0 8px var(--color-secondary);
+  transform: scale(1.05);
+}
+
+/* Cards */
+.card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(183, 65, 14, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Container and Layout */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Reduce base font size on small screens */
+  }
+  .container {
+    max-width: 100% !important;
+    padding: 0.5rem !important;
+  }
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-responsive {
+    overflow-x: auto;
+  }
+  input, button, select, textarea {
+    width: 100% !important;
+    box-sizing: border-box;
+    font-size: 1rem !important;
+  }
+  .d-flex {
+    flex-direction: column !important;
+  }
+}
+
+/* More aggressive size reduction for very small screens (e.g., Android phones) */
+@media (max-width: 480px) {
+  html {
+    font-size: 12px !important; /* Further reduce base font size */
+  }
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  h3 {
+    font-size: 1rem !important;
+  }
+  p, a, button, input, select, textarea {
+    font-size: 0.75rem !important;
+  }
+  button {
+    padding: 0.25rem 0.5rem !important;
+  }
+  .container {
+    padding: 0.25rem !important;
+  }
+}

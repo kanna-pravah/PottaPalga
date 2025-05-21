@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+
+/* Global Theme CSS with gourmet color palette and fonts */
+
+:root {
+  /* Colors */
+  --color-bg: #f8f4f0; /* Off-white */
+  --color-bg-dark: #2e2e2e; /* Smokey charcoal */
+  --color-primary: #6b0f1a; /* Deep Maroon */
+  --color-secondary: #d4af37; /* Warm Gold */
+  --color-accent1: #c49e1f; /* Curry Yellow */
+  --color-accent2: #b22222; /* Masala Red */
+  --color-accent3: #4a7c59; /* Leaf Green */
+  --color-text-primary: #2e2e2e; /* Charcoal Black */
+  --color-text-secondary: #6b0f1a; /* Deep Maroon */
+
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent2);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--color-accent2);
+  border-color: var(--color-accent2);
+  box-shadow: 0 0 8px var(--color-accent2);
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(107, 15, 26, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(107, 15, 26, 0.3);
+}
+
+/* Utility classes */
+.text-accent {
+  color: var(--color-accent2);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+/* Scroll reveal animations */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
+}

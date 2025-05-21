@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "guestName": "Malla Reddy",
+    "date": "2025-06-25",
+    "time": "19:00",
+    "partySize": 4,
+    "table": 5,
+    "status": "confirmed",
+    "ac": "AC",
+    "phoneNumber": "9876543210",
+    "orders": [
+      { "item": "Paneer Butter Masala", "quantity": 2 },
+      { "item": "Garlic Naan", "quantity": 4 }
+    ],
+    "waitingPeriod": "15 mins",
+    "billDetails": 1200,
+    "paymentMode": "Credit Card"
+  },
+  {
+    "id": 2,
+    "guestName": "Chichhu Buddi",
+    "date": "2025-06-26",
+    "time": "20:30",
+    "partySize": 2,
+    "table": 3,
+    "status": "pending",
+    "ac": "Non-AC",
+    "phoneNumber": "9123456780",
+    "orders": [
+      { "item": "Chicken Biryani", "quantity": 1 },
+      { "item": "Raita", "quantity": 2 }
+    ],
+    "waitingPeriod": "5 mins",
+    "billDetails": 800,
+    "paymentMode": "Cash"
+  }
+]

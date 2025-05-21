@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Malla Reddy",
+    "birthday": "1990-06-15",
+    "history": "Frequent visitor, prefers vodka in badam milk",
+    "vip": true
+  },
+  {
+    "id": 2,
+    "name": "Dinesh",
+    "birthday": "1985-12-05",
+    "history": "Celebrated valentines here",
+    "vip": false
+  },
+  {
+    "id": 3,
+    "name": "Sowmya",
+    "birthday": "1995-06-20",
+    "history": "Loyal customer, loves spicy dishes",
+    "vip": false
+  }
+]
