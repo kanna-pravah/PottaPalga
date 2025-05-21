@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button, InputGroup, Tabs, Tab } from 'react-bootstrap';
 import { FaUser, FaUserTie, FaUserShield } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
   const [key, setKey] = useState('login');
@@ -11,6 +13,9 @@ const Login = () => {
   const [otp, setOtp] = useState('');
   const [password, setPassword] = useState('');
   const [rePassword, setRePassword] = useState('');
+
+  const { setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const togglePassword = () => setShowPassword(!showPassword);
 
@@ -31,22 +36,43 @@ const Login = () => {
     }
   };
 
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    // For demo, accept any input as valid login
+    // Set user in context with role
+    setUser({ role });
+    // Redirect based on role
+    if (role === 'staff') {
+      navigate('/tables'); // or staff dashboard
+    } else if (role === 'admin') {
+      navigate('/admin');
+    } else {
+      navigate('/');
+    }
+  };
+
   const renderLoginForm = () => (
-    <Form className="p-4 shadow-sm rounded bg-white" style={{ maxWidth: '400px', margin: 'auto' }}>
+    <Form onSubmit={handleLoginSubmit} className="p-4 shadow-sm rounded bg-white" style={{ maxWidth: '400px', margin: 'auto' }}>
       <Form.Group className="mb-3" controlId={`${role}-email`}>
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Control type="email" placeholder="Enter email" value={phone} onChange={(e) => setPhone(e.target.value)} required />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId={`${role}-password`}>
         <Form.Label>Password</Form.Label>
         <InputGroup>
-          <Form.Control type={showPassword ? 'text' : 'password'} placeholder="Password" />
-          <Button variant="outline-secondary" onClick={togglePassword} tabIndex={-1}>
+          <Form.Control type={showPassword ? 'text' : 'password'} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <Button variant="outline-secondary" onClick={togglePassword} tabIndex={-1} type="button">
             {showPassword ? 'Hide' : 'Show'}
           </Button>
         </InputGroup>
       </Form.Group>
+
+      {role === 'staff' && (
+        <div className="mb-3 text-info">
+          Staff login: Please use your staff credentials.
+        </div>
+      )}
 
       <Button variant="primary" type="submit" className="w-100 rounded-pill">
         Login as {role.charAt(0).toUpperCase() + role.slice(1)}
@@ -70,7 +96,7 @@ const Login = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
-          <Button variant="outline-primary" onClick={sendOtp} tabIndex={-1}>
+          <Button variant="outline-primary" onClick={sendOtp} tabIndex={-1} type="button">
             Send OTP
           </Button>
         </InputGroup>
@@ -86,7 +112,7 @@ const Login = () => {
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
             />
-            <Button variant="outline-success" onClick={verifyOtp} tabIndex={-1}>
+            <Button variant="outline-success" onClick={verifyOtp} tabIndex={-1} type="button">
               Verify OTP
             </Button>
           </InputGroup>
@@ -107,7 +133,7 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button variant="outline-secondary" onClick={togglePassword} tabIndex={-1}>
+          <Button variant="outline-secondary" onClick={togglePassword} tabIndex={-1} type="button">
             {showPassword ? 'Hide' : 'Show'}
           </Button>
         </InputGroup>
@@ -122,7 +148,7 @@ const Login = () => {
             value={rePassword}
             onChange={(e) => setRePassword(e.target.value)}
           />
-          <Button variant="outline-secondary" onClick={togglePassword} tabIndex={-1}>
+          <Button variant="outline-secondary" onClick={togglePassword} tabIndex={-1} type="button">
             {showPassword ? 'Hide' : 'Show'}
           </Button>
         </InputGroup>
